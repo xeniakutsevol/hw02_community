@@ -18,9 +18,10 @@ class Post(models.Model):
     pub_date = models.DateTimeField("Дата публикации", auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                verbose_name="Автор поста")
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name="posts",
-                              blank=True, null=True, verbose_name="Название сообщества")
-    
+    group = models.ForeignKey(Group, on_delete=models.CASCADE,
+                              related_name="posts", blank=True, null=True,
+                              verbose_name="Название сообщества")
+
     class Meta:
         ordering = ["-pub_date"]
 

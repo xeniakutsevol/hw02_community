@@ -5,6 +5,7 @@ from .models import Group, Post
 
 POSTS_PER_PAGE = 10
 
+
 # Главная страница
 def index(request):
     title = "Yatube — главная страница"
